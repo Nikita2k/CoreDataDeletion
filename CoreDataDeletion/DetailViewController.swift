@@ -12,8 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
-    var detailItem: AnyObject? {
+    var detailItem: Entity? {
         didSet {
             // Update the view.
             self.configureView()
@@ -22,24 +21,26 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
+        if let detail = self.detailItem, let label = self.detailDescriptionLabel {
+            label.text = detail.dateTime.description
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let reloadButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "configureView")
+        self.navigationItem.rightBarButtonItem = reloadButton
+        
         self.configureView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func sendLocalPush(sender: AnyObject) {
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate().dateByAddingTimeInterval(1)
+        localNotification.alertBody = "Reload data!"
+        localNotification.userInfo = ["deleteObjectWithTime": detailItem!.dateTime]
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
-
-
 }
 

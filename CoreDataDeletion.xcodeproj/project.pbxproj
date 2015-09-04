@@ -14,6 +14,9 @@
 		AB5542E41B99A06A00C7CD65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB5542E31B99A06A00C7CD65 /* Images.xcassets */; };
 		AB5542E71B99A06A00C7CD65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB5542E51B99A06A00C7CD65 /* LaunchScreen.xib */; };
 		AB5542F31B99A06A00C7CD65 /* CoreDataDeletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5542F21B99A06A00C7CD65 /* CoreDataDeletionTests.swift */; };
+		AB5542FD1B99A23100C7CD65 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5542FC1B99A23100C7CD65 /* CoreDataStack.swift */; };
+		AB5543001B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB5542FE1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodeld */; };
+		AB5543021B99A7BC00C7CD65 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5543011B99A7BC00C7CD65 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		AB5542EC1B99A06A00C7CD65 /* CoreDataDeletionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataDeletionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5542F11B99A06A00C7CD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5542F21B99A06A00C7CD65 /* CoreDataDeletionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDeletionTests.swift; sourceTree = "<group>"; };
+		AB5542FC1B99A23100C7CD65 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		AB5542FF1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDeletion.xcdatamodel; sourceTree = "<group>"; };
+		AB5543011B99A7BC00C7CD65 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +85,16 @@
 		AB5542D71B99A06900C7CD65 /* CoreDataDeletion */ = {
 			isa = PBXGroup;
 			children = (
+				AB5543011B99A7BC00C7CD65 /* Entity.swift */,
 				AB5542DA1B99A06900C7CD65 /* AppDelegate.swift */,
 				AB5542DC1B99A06A00C7CD65 /* MasterViewController.swift */,
 				AB5542DE1B99A06A00C7CD65 /* DetailViewController.swift */,
+				AB5542FC1B99A23100C7CD65 /* CoreDataStack.swift */,
 				AB5542E01B99A06A00C7CD65 /* Main.storyboard */,
 				AB5542E31B99A06A00C7CD65 /* Images.xcassets */,
 				AB5542E51B99A06A00C7CD65 /* LaunchScreen.xib */,
 				AB5542D81B99A06900C7CD65 /* Supporting Files */,
+				AB5542FE1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodeld */,
 			);
 			path = CoreDataDeletion;
 			sourceTree = "<group>";
@@ -216,8 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB5542DF1B99A06A00C7CD65 /* DetailViewController.swift in Sources */,
+				AB5543001B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodeld in Sources */,
+				AB5543021B99A7BC00C7CD65 /* Entity.swift in Sources */,
 				AB5542DD1B99A06A00C7CD65 /* MasterViewController.swift in Sources */,
 				AB5542DB1B99A06900C7CD65 /* AppDelegate.swift in Sources */,
+				AB5542FD1B99A23100C7CD65 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +435,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB5542FE1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB5542FF1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodel */,
+			);
+			currentVersion = AB5542FF1B99A77E00C7CD65 /* CoreDataDeletion.xcdatamodel */;
+			path = CoreDataDeletion.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AB5542CD1B99A06900C7CD65 /* Project object */;
 }
